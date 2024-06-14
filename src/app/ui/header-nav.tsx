@@ -6,7 +6,7 @@ import { usePathname } from "next/navigation";
 const links = [
   {
     name: '웹툰/만화',
-    href: '/'
+    href: '/webtoon'
   },
   {
     name: '웹소설',
@@ -29,7 +29,7 @@ export const HeaderNav = () => {
     <ul className="flex">
       { links.map((link) => {
         return (
-          <li className={` p-3`}>
+          <li key={`header-nav-${link.name}`} className={` p-3`}>
             <Link href={link.href}><p className={`${pathname === link.href ? 'text-black' : 'text-[#aaa]'}`}>{link.name}</p></Link>
           </li>
         )
